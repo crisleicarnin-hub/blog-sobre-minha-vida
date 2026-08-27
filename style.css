@@ -1,14 +1,16 @@
 ```css
 :root {
-    --cream: #fff8f2;
-    --pink: #e9b7bd;
-    --pink-dark: #b86f7c;
-    --lavender: #c8bfdc;
-    --purple: #6d617d;
-    --blue: #b9d5d8;
-    --green: #c5d5c1;
-    --dark: #27232a;
-    --text: #38323a;
+    --cream: #fff7f2;
+    --pink: #f29aaa;
+    --pink-dark: #c95d72;
+    --purple: #7463a5;
+    --purple-dark: #4d416f;
+    --blue: #79b9d1;
+    --yellow: #f4c95d;
+    --orange: #e98255;
+    --green: #8fc59a;
+    --dark: #29232d;
+    --text: #403844;
     --white: #ffffff;
 }
 
@@ -24,8 +26,13 @@ html {
 
 body {
     font-family: "DM Sans", sans-serif;
-    background: var(--cream);
     color: var(--text);
+    background: var(--cream);
+}
+
+img {
+    width: 100%;
+    display: block;
 }
 
 a {
@@ -33,18 +40,21 @@ a {
     color: inherit;
 }
 
-.header {
+
+/* MENU */
+
+header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 248, 242, 0.94);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(39, 35, 42, 0.1);
+    background: rgba(255, 247, 242, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(41, 35, 45, .12);
 }
 
 .navbar {
     max-width: 1250px;
-    height: 78px;
+    height: 80px;
     margin: auto;
     padding: 0 35px;
 
@@ -55,8 +65,8 @@ a {
 
 .logo {
     font-family: "Playfair Display", serif;
-    font-size: 26px;
-    letter-spacing: 5px;
+    font-size: 25px;
+    letter-spacing: 4px;
     font-weight: 600;
 }
 
@@ -68,14 +78,14 @@ a {
 .menu {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 24px;
 }
 
 .menu a {
-    font-size: 11px;
-    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
     letter-spacing: 1.5px;
-    transition: 0.3s;
+    text-transform: uppercase;
 }
 
 .menu a:hover {
@@ -86,191 +96,120 @@ a {
 /* HERO */
 
 .hero {
-    min-height: calc(100vh - 78px);
-    position: relative;
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f7dfe1 0%,
-            #f3d8dc 38%,
-            #dcd3e5 100%
-        );
-}
-
-.hero-content {
-    max-width: 1250px;
-    min-height: calc(100vh - 78px);
-    margin: auto;
-    padding: 80px 50px;
+    min-height: 680px;
+    padding: 80px max(40px, calc((100% - 1150px) / 2));
 
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
     align-items: center;
+
+    background:
+        radial-gradient(circle at 85% 20%, #f6c8d1 0 10%, transparent 11%),
+        radial-gradient(circle at 15% 80%, #cfc2e8 0 12%, transparent 13%),
+        linear-gradient(135deg, #ffd8df, #d8c8ed);
 }
 
-.eyebrow {
-    font-size: 10px;
-    letter-spacing: 4px;
+.eyebrow,
+.small-title {
+    font-size: 9px;
     font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
     color: var(--pink-dark);
 }
 
 .hero h1 {
     font-family: "Playfair Display", serif;
     font-size: clamp(65px, 8vw, 105px);
-    line-height: 0.9;
     font-weight: 500;
+    line-height: .9;
     margin: 25px 0 35px;
-    color: var(--dark);
 }
 
-.hero h1 span {
-    display: block;
-    font-style: italic;
+.hero h1 i {
     color: var(--purple);
 }
 
 .hero-text > p {
-    max-width: 500px;
+    max-width: 510px;
+    color: #5f5662;
     font-size: 15px;
     line-height: 1.8;
-    color: #5c505b;
     margin-bottom: 35px;
 }
 
-.hero-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 25px;
-
+.button {
+    display: inline-block;
+    padding: 17px 23px;
     background: var(--dark);
     color: white;
 
-    padding: 17px 23px;
-
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
     letter-spacing: 2px;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
-.hero-button span {
-    font-size: 18px;
-}
-
-.hero-button:hover {
-    transform: translateY(-4px);
+.button:hover {
     background: var(--pink-dark);
+    transform: translateY(-4px);
 }
 
-.hero-art {
+.hero-image {
     position: relative;
+    max-width: 470px;
+    margin: auto;
+}
+
+.image-frame {
+    padding: 15px;
+    background: white;
+    transform: rotate(3deg);
+    box-shadow: 25px 25px 0 rgba(116, 99, 165, .3);
+}
+
+.image-frame img {
     height: 520px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
 }
 
-.art-circle {
+.floating-card {
     position: absolute;
+    left: -45px;
+    bottom: 35px;
 
-    width: 420px;
-    height: 420px;
+    width: 150px;
+    height: 150px;
 
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.28);
-}
-
-.art-card {
-    position: relative;
-    width: 300px;
-    height: 400px;
-
-    background: rgba(255, 248, 242, 0.88);
-
-    padding: 30px;
-
-    box-shadow: 25px 25px 0 rgba(109, 97, 125, 0.25);
+    background: var(--yellow);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    transform: rotate(4deg);
+    transform: rotate(-7deg);
 }
 
-.art-number {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--pink-dark);
-}
-
-.art-heart {
+.floating-card span {
     font-family: "Playfair Display", serif;
-    font-size: 75px;
-    color: var(--pink-dark);
+    font-size: 40px;
 }
 
-.art-card h2 {
+.floating-card p {
     font-family: "Playfair Display", serif;
-    font-size: 47px;
-    text-align: center;
-    line-height: 0.9;
-    color: var(--dark);
+    font-size: 22px;
+    line-height: .9;
 }
 
-.art-card h2 i {
+.floating-card i {
     color: var(--purple);
 }
 
-.art-small {
-    margin-top: 30px;
-    font-size: 8px;
-    letter-spacing: 3px;
-}
 
-.scroll {
-    position: absolute;
-    bottom: 30px;
-    left: 50px;
-
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: var(--purple);
-}
-
-.hero-decoration {
-    position: absolute;
-    border-radius: 50%;
-}
-
-.decoration-one {
-    width: 30px;
-    height: 30px;
-    border: 1px solid white;
-    top: 15%;
-    left: 7%;
-}
-
-.decoration-two {
-    width: 12px;
-    height: 12px;
-    background: var(--pink-dark);
-    right: 8%;
-    top: 20%;
-}
-
-
-/* SEÇÕES */
+/* GERAL */
 
 .section {
     max-width: 1250px;
@@ -278,36 +217,40 @@ a {
     padding: 110px 50px;
 }
 
-.section-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 70px;
-}
-
-.section-header > div {
+.section-title {
     display: flex;
     align-items: center;
     gap: 15px;
-    white-space: nowrap;
+    margin-bottom: 65px;
 }
 
-.number {
+.section-title span {
     color: var(--pink-dark);
     font-family: "Playfair Display", serif;
     font-style: italic;
 }
 
-.label {
-    font-size: 9px;
-    letter-spacing: 3px;
-    font-weight: 700;
+.section-title h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    font-weight: 500;
 }
 
-.line {
+.section-title::after {
+    content: "";
     height: 1px;
-    background: rgba(39, 35, 42, 0.15);
-    width: 100%;
+    background: rgba(41, 35, 45, .15);
+    flex: 1;
+    margin-left: 20px;
+}
+
+.light span,
+.light h2 {
+    color: white;
+}
+
+.light::after {
+    background: rgba(255,255,255,.25);
 }
 
 
@@ -319,94 +262,91 @@ a {
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 120px;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 100px;
     align-items: center;
 }
 
-.about-title p {
-    font-family: "Playfair Display", serif;
-    font-size: 25px;
-    color: var(--pink-dark);
+.about-image {
+    position: relative;
 }
 
-.about-title h2 {
+.about-image::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--pink);
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+}
+
+.about-image img {
+    height: 480px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.about-text h3 {
     font-family: "Playfair Display", serif;
-    font-size: 75px;
-    line-height: 0.95;
+    font-size: 65px;
     font-weight: 500;
-    margin: 15px 0 30px;
+    line-height: .95;
+    margin: 20px 0 30px;
 }
 
-.about-title h2 i {
+.about-text h3 i {
     color: var(--purple);
 }
 
-.mini-line {
-    width: 55px;
-    height: 3px;
-    background: var(--pink-dark);
-}
-
-.about-text {
-    font-size: 15px;
-    color: #6b626b;
-}
-
 .about-text p {
-    margin-bottom: 20px;
-}
-
-.about-text .big-text {
-    font-family: "Playfair Display", serif;
-    font-size: 34px;
-    color: var(--dark);
+    color: #6d646d;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 18px;
 }
 
 
 /* ESCOLA */
 
-.school-section {
-    background: var(--purple);
+.school {
+    background:
+        radial-gradient(circle at 10% 20%, #8c7cb5 0 10%, transparent 11%),
+        var(--purple-dark);
     color: white;
 }
 
-.school {
-    max-width: 1250px;
-}
-
-.light .line {
-    background: rgba(255, 255, 255, 0.25);
-}
-
-.light .number,
-.light .label {
-    color: #f3d8dc;
+.school .section {
+    padding-top: 110px;
+    padding-bottom: 110px;
 }
 
 .school-intro {
     display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-columns: 1.2fr .8fr;
     gap: 100px;
     align-items: end;
     margin-bottom: 60px;
 }
 
-.school-intro h2 {
+.school-intro h3 {
     font-family: "Playfair Display", serif;
-    font-size: 58px;
+    font-size: 55px;
     font-weight: 500;
-    line-height: 1.05;
+    line-height: 1;
     margin-top: 20px;
 }
 
-.school-intro h2 i {
+.school-intro h3 i {
     color: var(--pink);
 }
 
 .school-intro p {
-    color: #ddd7e1;
+    color: #ddd7e5;
     font-size: 14px;
+    line-height: 1.8;
 }
 
 .school-cards {
@@ -415,197 +355,167 @@ a {
     gap: 20px;
 }
 
-.school-card {
-    position: relative;
-    padding: 38px;
-    min-height: 290px;
-
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.17);
-
-    transition: 0.3s;
+.school-cards article {
+    padding: 35px;
+    min-height: 280px;
+    background: rgba(255,255,255,.1);
+    border: 1px solid rgba(255,255,255,.16);
+    transition: .3s;
 }
 
-.school-card:hover {
+.school-cards article:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255,255,255,.16);
 }
 
-.card-icon {
-    font-size: 32px;
-    color: var(--pink);
+.icon {
+    font-size: 35px;
+    color: var(--yellow);
 }
 
-.card-number {
-    position: absolute;
-    top: 35px;
-    right: 35px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #d8d0dc;
-}
-
-.school-card h3 {
+.school-cards h4 {
     font-family: "Playfair Display", serif;
-    font-size: 31px;
-    font-weight: 500;
-    margin: 55px 0 15px;
+    font-size: 30px;
+    margin: 45px 0 15px;
 }
 
-.school-card p {
-    color: #ddd7e1;
+.school-cards p {
+    color: #ddd7e5;
     font-size: 13px;
+    line-height: 1.7;
 }
 
 
 /* HOBBIES */
 
 .hobbies {
-    background: #fff9f5;
+    background: #fffaf6;
 }
 
-.hobbies-title {
+.hobby-intro {
     max-width: 750px;
     margin-bottom: 55px;
 }
 
-.hobbies-title h2 {
+.hobby-intro h3 {
     font-family: "Playfair Display", serif;
-    font-size: 57px;
+    font-size: 55px;
     font-weight: 500;
-    line-height: 1.05;
-    margin-top: 18px;
+    line-height: 1;
+    margin-top: 20px;
 }
 
-.hobbies-title h2 i {
+.hobby-intro h3 i {
     color: var(--pink-dark);
 }
 
 .hobby-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 22px;
 }
 
 .hobby {
-    min-height: 380px;
-    padding: 35px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
+    min-height: 450px;
+    overflow: hidden;
     position: relative;
-
-    transition: 0.3s;
+    color: var(--dark);
 }
 
-.hobby:hover {
-    transform: translateY(-8px);
+.hobby img {
+    height: 230px;
+    object-fit: cover;
 }
 
-.hobby-paint {
-    background: var(--green);
+.hobby > div {
+    padding: 25px 30px 30px;
 }
 
-.hobby-books {
-    background: var(--pink);
-}
-
-.hobby-movies {
-    background: var(--blue);
-}
-
-.hobby-number {
-    font-size: 10px;
+.hobby > div > span {
+    font-size: 9px;
     letter-spacing: 2px;
 }
 
-.hobby-symbol {
+.hobby h4 {
     font-family: "Playfair Display", serif;
-    font-size: 65px;
-    opacity: 0.65;
-}
-
-.hobby h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 35px;
-    font-weight: 500;
-    margin-bottom: 10px;
+    font-size: 32px;
+    margin: 15px 0 8px;
 }
 
 .hobby p {
-    max-width: 260px;
     font-size: 13px;
     line-height: 1.7;
+}
+
+.pink {
+    background: #f4c4cd;
+}
+
+.purple {
+    background: #c9c0df;
+}
+
+.blue {
+    background: #b9dce7;
 }
 
 
 /* FILMES */
 
-.movies-section {
+.movies {
     background: var(--dark);
     color: white;
 }
 
-.movies {
-    max-width: 1250px;
-    margin: auto;
-    padding: 110px 50px 0;
+.movies .section {
+    padding-bottom: 0;
 }
 
-.movies-content {
+.movies-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.2fr .8fr;
     gap: 100px;
     align-items: center;
-    padding-bottom: 90px;
+    margin-bottom: 70px;
 }
 
-.movies-title h2 {
+.movies-grid h3 {
     font-family: "Playfair Display", serif;
-    font-size: 70px;
-    line-height: 0.98;
+    font-size: 65px;
     font-weight: 500;
+    line-height: .95;
     margin-top: 20px;
 }
 
-.movies-title h2 i {
+.movies-grid h3 i {
     color: var(--pink);
 }
 
 .movies-text {
-    color: #c8c2c9;
+    color: #c9c3cb;
     font-size: 14px;
+    line-height: 1.8;
 }
 
 .movies-text p {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
-.movie-tag {
+.tags {
     display: inline-block;
     padding: 12px 17px;
-    margin-top: 15px;
-
-    border: 1px solid rgba(255,255,255,0.2);
-
+    border: 1px solid rgba(255,255,255,.2);
     font-size: 8px;
     letter-spacing: 2px;
 }
 
-.film-strip {
-    height: 90px;
-    background: #332e35;
+.movie-image {
+    width: 100%;
+}
 
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    align-items: center;
-    text-align: center;
-
-    color: var(--pink);
-    font-family: "Playfair Display", serif;
-    font-size: 27px;
+.movie-image img {
+    height: 420px;
+    object-fit: cover;
 }
 
 
@@ -615,94 +525,57 @@ a {
     background: var(--cream);
 }
 
-.book-layout {
+.book-grid {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: .8fr 1.2fr;
     gap: 110px;
     align-items: center;
 }
 
-.book-visual {
-    display: flex;
-    justify-content: center;
+.book-image {
+    position: relative;
 }
 
-.book-cover {
-    width: 290px;
-    height: 420px;
-
-    padding: 30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #d8c8df,
-            #efc8ce
-        );
-
-    box-shadow: 20px 20px 0 var(--purple);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
+.book-image::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--orange);
+    left: 20px;
+    top: 20px;
+    z-index: 0;
 }
 
-.book-top,
-.book-bottom {
-    font-size: 9px;
-    letter-spacing: 4px;
+.book-image img {
+    height: 500px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
 }
 
-.book-heart {
-    font-family: "Playfair Display", serif;
-    color: white;
-    font-size: 65px;
-    margin: 45px 0 15px;
-}
-
-.book-cover h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 43px;
-    line-height: 0.9;
-    color: var(--dark);
-}
-
-.book-cover h3 i {
-    color: white;
-}
-
-.book-bottom {
-    margin-top: 45px;
-}
-
-.book-info {
-    max-width: 650px;
-}
-
-.book-info h2 {
+.book-text h3 {
     font-family: "Playfair Display", serif;
     font-size: 60px;
-    font-weight: 500;
     line-height: 1;
+    font-weight: 500;
     margin: 20px 0 30px;
 }
 
-.book-info h2 i {
-    color: var(--pink-dark);
+.book-text h3 i {
+    color: var(--orange);
 }
 
-.book-info p {
-    color: #6b626b;
+.book-text p {
+    color: #6d646d;
     font-size: 14px;
+    line-height: 1.8;
     margin-bottom: 18px;
 }
 
-.book-quote {
-    border-left: 3px solid var(--pink-dark);
-    padding: 15px 20px;
+blockquote {
+    border-left: 3px solid var(--orange);
+    padding-left: 20px;
     margin-top: 30px;
 
     font-family: "Playfair Display", serif;
@@ -713,33 +586,37 @@ a {
 
 /* SONHOS */
 
-.dream-section {
+.dreams {
     position: relative;
     overflow: hidden;
+    padding: 140px 30px;
+
+    text-align: center;
 
     background:
-        linear-gradient(
-            135deg,
-            #e9b7bd,
-            #c8bfdc
-        );
-
-    padding: 130px 30px;
-    text-align: center;
+        radial-gradient(circle at 20% 30%, #a7d7b0 0 13%, transparent 14%),
+        radial-gradient(circle at 80% 70%, #f6c06a 0 15%, transparent 16%),
+        linear-gradient(135deg, #a8d6b0, #f4c8a8);
 }
 
 .dream-content {
-    max-width: 850px;
-    margin: auto;
     position: relative;
     z-index: 2;
+    max-width: 850px;
+    margin: auto;
+}
+
+.dream-content > span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 
 .dream-content h2 {
     font-family: "Playfair Display", serif;
-    font-size: clamp(50px, 6vw, 75px);
+    font-size: 70px;
     font-weight: 500;
-    line-height: 1;
+    line-height: .98;
     margin: 25px 0 35px;
 }
 
@@ -749,47 +626,28 @@ a {
 
 .dream-content p {
     max-width: 650px;
-    margin: 0 auto 20px;
-    color: #5b515d;
+    margin: 0 auto 18px;
     font-size: 14px;
+    line-height: 1.8;
+    color: #4f5550;
 }
 
 .dream-word {
     margin-top: 60px;
-
     font-family: "Playfair Display", serif;
-    font-size: 80px;
-    letter-spacing: 13px;
-
-    color: rgba(255,255,255,0.35);
-}
-
-.dream-decoration {
-    position: absolute;
-    top: 30px;
-    right: 10%;
     font-size: 70px;
-    color: rgba(255,255,255,0.4);
+    letter-spacing: 12px;
+    color: rgba(255,255,255,.55);
 }
 
 
 /* FOOTER */
 
 footer {
-    background: #201d22;
+    background: #211d25;
     color: white;
-    padding: 60px 50px 25px;
-}
-
-.footer-top {
-    max-width: 1150px;
-    margin: auto;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding-bottom: 50px;
+    text-align: center;
+    padding: 60px 30px;
 }
 
 .footer-logo {
@@ -800,28 +658,18 @@ footer {
 
 .footer-logo span {
     font-style: italic;
-    font-weight: 400;
 }
 
-.footer-top p {
-    max-width: 400px;
-    color: #aaa4ac;
+footer p {
+    color: #aaa3ad;
     font-size: 12px;
+    margin: 15px 0 25px;
 }
 
-.footer-bottom {
-    max-width: 1150px;
-    margin: auto;
-
-    padding-top: 20px;
-    border-top: 1px solid #3b373e;
-
-    display: flex;
-    justify-content: space-between;
-
+footer small {
+    color: #77717b;
     font-size: 8px;
     letter-spacing: 3px;
-    color: #89838b;
 }
 
 
@@ -833,17 +681,17 @@ footer {
         display: none;
     }
 
-    .hero-content,
+    .hero,
     .about-grid,
     .school-intro,
-    .movies-content,
-    .book-layout {
+    .movies-grid,
+    .book-grid {
         grid-template-columns: 1fr;
-        gap: 60px;
     }
 
-    .hero-content {
+    .hero {
         text-align: center;
+        padding: 70px 30px;
     }
 
     .hero-text > p {
@@ -851,8 +699,8 @@ footer {
         margin-right: auto;
     }
 
-    .hero-art {
-        height: 420px;
+    .hero-image {
+        max-width: 400px;
     }
 
     .school-cards,
@@ -860,22 +708,8 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .school-intro {
-        gap: 30px;
-    }
-
-    .movies-title h2 {
-        font-size: 55px;
-    }
-
-    .book-visual {
-        order: 2;
-    }
-
-    .footer-top {
-        flex-direction: column;
-        gap: 25px;
-        text-align: center;
+    .movies-grid {
+        gap: 50px;
     }
 }
 
@@ -886,45 +720,38 @@ footer {
         padding: 0 20px;
     }
 
-    .hero-content,
-    .section,
-    .movies {
-        padding-left: 25px;
-        padding-right: 25px;
+    .section {
+        padding: 80px 25px;
     }
 
     .hero h1 {
-        font-size: 60px;
-    }
-
-    .hero-art {
-        transform: scale(0.85);
-    }
-
-    .about-title h2 {
         font-size: 58px;
     }
 
-    .school-intro h2,
-    .hobbies-title h2,
-    .book-info h2 {
-        font-size: 43px;
+    .hero-image {
+        transform: scale(.9);
     }
 
-    .movies-title h2 {
+    .about-text h3 {
+        font-size: 55px;
+    }
+
+    .school-intro h3,
+    .hobby-intro h3,
+    .movies-grid h3,
+    .book-text h3 {
+        font-size: 45px;
+    }
+
+    .dream-content h2 {
         font-size: 48px;
     }
 
     .dream-word {
-        font-size: 45px;
-        letter-spacing: 6px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        font-size: 42px;
+        letter-spacing: 5px;
     }
 }
 ```
+
 
