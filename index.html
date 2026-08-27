@@ -1,426 +1,1061 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Universo — Blog Pessoal</title>
 
-<title>Meu Universo — Blog Pessoal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Work+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --azul: #315c72
+;
+      --azul-claro: #9fd1df
+;
+      --verde: #719b78
+;
+      --verde-claro: #cfe4ce
+;
+      --amarelo: #f2c75c
+;
+      --amarelo-claro: #fff0b5
+;
+      --laranja: #e98558
+;
+      --rosa: #df91a9
+;
+      --rosa-claro: #f5d5df
+;
+      --roxo: #8b75ae
+;
+      --roxo-claro: #d8cbea
+;
+      --creme: #fff8ed
+;
+      --escuro: #27242a
+;
+      --branco: #ffffff
+;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--creme);
+      color: var(--escuro);
+      font-family: "Work Sans", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus,
+    button:focus {
+      outline: 3px solid var(--laranja);
+      outline-offset: 4px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      line-height: 1;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 248, 237, 0.96);
+      border-bottom: 3px solid var(--azul);
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      width: min(1180px, 92%);
+      min-height: 78px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      color: var(--azul);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 20px;
+    }
+
+    .menu a {
+      color: var(--escuro);
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .menu a:hover {
+      color: var(--laranja);
+    }
+
+    /* ELEMENTOS GERAIS */
+
+    section {
+      padding: 100px 6%;
+      scroll-margin-top: 90px;
+    }
+
+    .container {
+      width: min(1120px, 100%);
+      margin: auto;
+    }
+
+    .titulo {
+      margin-bottom: 48px;
+      color: var(--azul);
+      font-size: clamp(42px, 6vw, 64px);
+      text-align: center;
+    }
+
+    .titulo.claro {
+      color: var(--branco);
+    }
+
+    .destaque {
+      color: var(--roxo);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .intro {
+      width: min(800px, 100%);
+      margin: -20px auto 0;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 15px 27px;
+      border-radius: 50px;
+      background: var(--azul);
+      color: var(--branco);
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .botao:hover {
+      background: var(--laranja);
+      transform: translateY(-3px);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 680px;
+      display: grid;
+      grid-template-columns: 1fr 430px;
+      align-items: center;
+      gap: 80px;
+      background:
+        radial-gradient(
+          circle at 8% 15%,
+          var(--amarelo) 0 9%,
+          transparent 9.5%
+        ),
+        radial-gradient(
+          circle at 88% 85%,
+          var(--rosa) 0 12%,
+          transparent 12.5%
+        ),
+        linear-gradient(
+          135deg,
+          var(--azul-claro),
+          var(--roxo-claro),
+          var(--rosa-claro)
+        );
+    }
+
+    .hero-content {
+      width: min(650px, 100%);
+      margin-left: auto;
+    }
+
+    .hero h1 {
+      margin: 25px 0;
+      color: var(--azul);
+      font-size: clamp(56px, 8vw, 82px);
+    }
+
+    .hero h1 i {
+      color: var(--laranja);
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .imagem-hero {
+      height: 500px;
+      overflow: hidden;
+      border: 5px solid var(--azul);
+      border-radius: 230px 35px 230px 35px;
+      box-shadow: 18px 18px 0 var(--amarelo);
+    }
+
+    .faixa {
+      padding: 22px;
+      background: var(--azul);
+      color: var(--branco);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 5px;
+      text-align: center;
+    }
+
+    /* SOBRE */
+
+    .sobre {
+      background: linear-gradient(120deg, var(--rosa-claro), #fff2d4
+);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .sobre-imagem {
+      height: 440px;
+      overflow: hidden;
+      border: 4px solid var(--roxo);
+      border-radius: 35px;
+      box-shadow: 18px 18px 0 var(--amarelo);
+    }
+
+    .sobre-texto h2 {
+      margin: 18px 0 28px;
+      color: var(--azul);
+      font-size: clamp(48px, 6vw, 68px);
+    }
+
+    .sobre-texto h2 i {
+      color: var(--laranja);
+    }
+
+    .sobre-texto p {
+      margin-bottom: 17px;
+      font-size: 16px;
+    }
+
+    /* ESCOLA */
+
+    .escola {
+      color: var(--branco);
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          var(--amarelo) 0 12%,
+          transparent 12.5%
+        ),
+        linear-gradient(135deg, var(--azul), #426e82
+);
+    }
+
+    .escola .intro {
+      color: #edf7fa
+;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 55px;
+    }
+
+    .card {
+      min-height: 270px;
+      padding: 32px;
+      color: var(--escuro);
+      border: 3px solid var(--branco);
+      border-radius: 30px;
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card .emoji {
+      margin-bottom: 15px;
+      font-size: 40px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 31px;
+    }
+
+    .card p {
+      line-height: 1.7;
+    }
+
+    .card.amarelo {
+      background: var(--amarelo);
+      box-shadow: 10px 10px 0 var(--laranja);
+    }
+
+    .card.rosa {
+      background: var(--rosa);
+      box-shadow: 10px 10px 0 var(--roxo);
+    }
+
+    .card.azul {
+      background: var(--azul-claro);
+      box-shadow: 10px 10px 0 var(--verde);
+    }
+
+    /* HOBBIES */
+
+    .hobbies {
+      background: linear-gradient(135deg, var(--verde-claro), #e4d7ef
+);
+    }
+
+    .hobby-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 55px;
+    }
+
+    .hobby {
+      overflow: hidden;
+      border: 4px solid;
+      border-radius: 30px;
+      transition: transform 0.25s ease;
+    }
+
+    .hobby:hover {
+      transform: translateY(-8px);
+    }
+
+    .hobby-image {
+      height: 250px;
+    }
+
+    .hobby-content {
+      min-height: 225px;
+      padding: 28px;
+    }
+
+    .hobby span {
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .hobby h3 {
+      margin: 14px 0 8px;
+      font-size: 32px;
+    }
+
+    .hobby p {
+      line-height: 1.7;
+    }
+
+    .pintura {
+      border-color: var(--laranja);
+      background: var(--amarelo-claro);
+      box-shadow: 10px 10px 0 var(--laranja);
+    }
+
+    .leitura {
+      border-color: var(--roxo);
+      background: var(--rosa-claro);
+      box-shadow: 10px 10px 0 var(--roxo);
+    }
+
+    .cinema {
+      border-color: var(--azul);
+      background: var(--azul-claro);
+      box-shadow: 10px 10px 0 var(--azul);
+    }
+
+    /* FILMES */
+
+    .filmes {
+      color: var(--branco);
+      background:
+        radial-gradient(
+          circle at 10% 90%,
+          var(--roxo) 0 12%,
+          transparent 12.5%
+        ),
+        var(--escuro);
+    }
+
+    .filme-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .filme-grid h2 {
+      margin: 20px 0;
+      color: var(--rosa);
+      font-size: clamp(48px, 6vw, 68px);
+    }
+
+    .filme-grid h2 em {
+      color: var(--amarelo);
+    }
+
+    .filme-grid p {
+      margin-bottom: 25px;
+      color: #dddddd
+;
+      font-size: 17px;
+    }
+
+    .amarelo-texto {
+      color: var(--amarelo);
+    }
+
+    .filme-imagem {
+      height: 440px;
+      overflow: hidden;
+      border: 4px solid var(--amarelo);
+      border-radius: 35px;
+      box-shadow: 15px 15px 0 var(--rosa);
+    }
+
+    .tags {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 2px solid var(--rosa);
+      border-radius: 30px;
+      color: var(--rosa);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* LIVROS */
+
+    .livros-section {
+      background:
+        radial-gradient(
+          circle at 90% 10%,
+          var(--verde) 0 10%,
+          transparent 10.5%
+        ),
+        linear-gradient(135deg, var(--amarelo-claro), var(--creme));
+    }
+
+    .livro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .livro-imagem {
+      height: 510px;
+      overflow: hidden;
+      border: 4px solid var(--laranja);
+      border-radius: 35px;
+      box-shadow: 18px 18px 0 var(--rosa);
+    }
+
+    .livro-texto h2 {
+      margin: 20px 0 25px;
+      color: var(--laranja);
+      font-size: clamp(48px, 6vw, 66px);
+    }
+
+    .livro-texto h2 i {
+      color: var(--roxo);
+    }
+
+    .livro-texto p {
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .quote {
+      margin-top: 30px;
+      padding: 25px;
+      background: var(--branco);
+      border: 3px solid var(--roxo);
+      border-radius: 25px;
+      color: var(--roxo);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 21px;
+      font-style: italic;
+    }
+
+    /* SONHOS */
+
+    .sonhos {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          var(--rosa) 0 10%,
+          transparent 10.5%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          var(--amarelo) 0 12%,
+          transparent 12.5%
+        ),
+        linear-gradient(135deg, var(--verde), var(--azul-claro));
+      text-align: center;
+    }
+
+    .sonhos-conteudo {
+      width: min(850px, 100%);
+      margin: auto;
+    }
+
+    .sonhos-conteudo > span {
+      font-weight: 800;
+      letter-spacing: 4px;
+    }
+
+    .sonhos h2 {
+      margin: 25px 0;
+      font-size: clamp(50px, 7vw, 75px);
+    }
+
+    .sonhos h2 i {
+      color: var(--branco);
+    }
+
+    .sonhos p {
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .dream {
+      margin-top: 55px;
+      color: rgba(255, 255, 255, 0.55);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(42px, 8vw, 82px);
+      font-weight: 900;
+      letter-spacing: 10px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 60px 30px;
+      background: #202b31
+;
+      color: var(--branco);
+      text-align: center;
+    }
+
+    footer h2 {
+      margin-bottom: 15px;
+      color: var(--amarelo);
+      font-size: 40px;
+    }
+
+    footer p {
+      margin-bottom: 22px;
+      color: #c8d0d3
+;
+    }
+
+    footer span {
+      color: #89959a
+;
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    /* RESPONSIVIDADE */
+
+    @media (max-width: 850px) {
+      nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .menu {
+        justify-content: center;
+      }
+
+      .hero,
+      .sobre-grid,
+      .filme-grid,
+      .livro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        margin: auto;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .imagem-hero {
+        width: min(430px, 100%);
+        height: 430px;
+        margin: auto;
+      }
+
+      .sobre-texto {
+        text-align: center;
+      }
+
+      .cards,
+      .hobby-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card,
+      .hobby {
+        width: min(500px, 100%);
+        margin: auto;
+      }
+
+      .filme-grid,
+      .livro-grid {
+        gap: 45px;
+      }
+
+      .filme-grid > div:first-child,
+      .livro-texto {
+        text-align: center;
+      }
+
+      .filme-imagem,
+      .livro-imagem {
+        width: min(550px, 100%);
+        margin: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      section {
+        padding: 70px 22px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .menu {
+        gap: 8px 12px;
+      }
+
+      .menu a {
+        font-size: 11px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 75px;
+      }
+
+      .hero h1 {
+        font-size: 53px;
+      }
+
+      .hero p,
+      .intro {
+        font-size: 16px;
+      }
+
+      .imagem-hero {
+        height: 350px;
+        border-radius: 170px 28px 170px 28px;
+        box-shadow: 12px 12px 0 var(--amarelo);
+      }
+
+      .sobre-imagem,
+      .filme-imagem,
+      .livro-imagem {
+        height: 350px;
+      }
+
+      .sobre-texto h2,
+      .filme-grid h2,
+      .livro-texto h2 {
+        font-size: 46px;
+      }
+
+      .dream {
+        letter-spacing: 4px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-
-<nav>
-
-<div class="logo">MEU UNIVERSO</div>
-
-<div class="menu">
-<a href="#sobre">Sobre mim</a>
-<a href="#escola">Escola</a>
-<a href="#hobbies">Hobbies</a>
-<a href="#filmes">Filmes</a>
-<a href="#livros">Livros</a>
-<a href="#sonhos">Sonhos</a>
-</div>
-
-</nav>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero" id="inicio">
-
-<div class="hero-text">
-
-<span class="destaque">WELCOME TO MY WORLD ✦</span>
-
-<h1>
-Minha vida,<br>
-meu <i>universo.</i>
-</h1>
-
-<p>
-Um pequeno espaço para conhecer um pouco mais
-sobre mim, meus gostos, minhas paixões e os sonhos
-que quero realizar.
-</p>
-
-<a href="#sobre">
-<button>CONHECER MAIS →</button>
-</a>
-
-</div>
-
-
-<div class="imagem-hero">
-
-<img
-src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85"
-alt="Amizade e momentos felizes">
-
-</div>
-
-</section>
-
-
-<div class="faixa">
-
-MY STORY • MY DREAMS • MY WORLD
-
-</div>
-
-
-<!-- SOBRE MIM -->
-
-<section id="sobre" class="sobre">
-
-<h2 class="titulo">Sobre mim</h2>
-
-<div class="sobre-grid">
-
-<div class="sobre-imagem">
-
-<img
-src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85"
-alt="Pessoa aproveitando um momento criativo">
-
-</div>
-
-
-<div class="sobre-texto">
-
-<span class="destaque">01 · WHO I AM</span>
-
-<h2>
-Prazer,<br>
-essa sou <i>eu.</i>
-</h2>
-
-<p>
-Oi! Eu sou a Crislei. Sou uma pessoa curiosa,
-criativa e gosto de descobrir coisas novas.
-</p>
-
-<p>
-Estou vivendo uma fase cheia de descobertas,
-aprendizados e experiências que estão ajudando
-a construir quem eu sou.
-</p>
-
-<p>
-Gosto de ler, pintar, assistir filmes e séries,
-estudar e aproveitar os momentos especiais
-com as pessoas que fazem parte da minha vida.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ESCOLA -->
-
-<section id="escola" class="escola">
-
-<h2 class="titulo claro">Minha vida escolar</h2>
-
-<p class="intro">
-A escola representa uma parte importante da minha vida.
-É onde aprendo, enfrento desafios, descubro novos assuntos
-e começo a pensar cada vez mais no meu futuro.
-</p>
-
-
-<div class="cards">
-
-<div class="card amarelo">
-
-<div class="emoji">📚</div>
-
-<h3>Aprender</h3>
-
-<p>
-Gosto de aprender coisas novas e descobrir assuntos
-que podem ser importantes para o meu futuro.
-</p>
-
-</div>
-
-
-<div class="card rosa">
-
-<div class="emoji">✏️</div>
-
-<h3>Desafios</h3>
-
-<p>
-Nem sempre tudo é fácil, mas cada dificuldade
-é uma oportunidade de aprender e melhorar.
-</p>
-
-</div>
-
-
-<div class="card azul">
-
-<div class="emoji">⭐</div>
-
-<h3>Conquistas</h3>
-
-<p>
-Cada trabalho, prova e atividade concluída
-representa mais uma experiência.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- HOBBIES -->
-
-<section id="hobbies" class="hobbies">
-
-<h2 class="titulo">Meus hobbies</h2>
-
-<p class="intro">
-Nos meus momentos livres, gosto de fazer coisas
-que despertam minha criatividade e me deixam feliz.
-</p>
-
-
-<div class="hobby-grid">
-
-
-<article class="hobby pintura">
-
-<img
-src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85"
-alt="Materiais de pintura">
-
-<div>
-
-<span>01</span>
-
-<h3>Pintura</h3>
-
-<p>
-Gosto de pintar telas e colocar minha criatividade
-em cada detalhe.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="hobby leitura">
-
-<img
-src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85"
-alt="Livros">
-
-<div>
-
-<span>02</span>
-
-<h3>Leitura</h3>
-
-<p>
-Os livros me permitem conhecer personagens,
-lugares e histórias completamente diferentes.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="hobby cinema">
-
-<img
-src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85"
-alt="Cinema">
-
-<div>
-
-<span>03</span>
-
-<h3>Filmes & séries</h3>
-
-<p>
-Gosto de acompanhar histórias e me envolver
-com personagens diferentes.
-</p>
-
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-
-<!-- FILMES -->
-
-<section id="filmes" class="filmes">
-
-<h2 class="titulo claro">Filmes & séries</h2>
-
-<div class="filme-grid">
-
-<div>
-
-<span class="destaque amarelo-texto">
-04 · MOVIES & SERIES
-</span>
-
-<h2>
-Um universo de
-histórias para
-<em>assistir.</em>
-</h2>
-
-<p>
-Filmes e séries fazem parte dos meus momentos
-de diversão. Gosto de histórias que conseguem
-prender minha atenção e despertar emoções.
-</p>
-
-<div class="tags">
-ROMANCE · DRAMA · AVENTURA
-</div>
-
-</div>
-
-
-<div class="filme-imagem">
-
-<img
-src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1000&q=85"
-alt="Cinema">
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- LIVROS -->
-
-<section id="livros" class="livros-section">
-
-<h2 class="titulo">Livros</h2>
-
-<div class="livro-grid">
-
-<div class="livro-imagem">
-
-<img
-src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=85"
-alt="Livro aberto">
-
-</div>
-
-
-<div class="livro-texto">
-
-<span class="destaque">05 · BOOKS</span>
-
-<h2>
-Cada livro abre
-uma nova <i>história.</i>
-</h2>
-
-<p>
-A leitura é um dos hobbies que mais gosto.
-Os livros conseguem me transportar para outros
-lugares e me fazer conhecer personagens diferentes.
-</p>
-
-<p>
-Gosto principalmente de histórias que conseguem
-prender minha atenção e fazer com que eu queira
-continuar lendo.
-</p>
-
-<div class="quote">
-
-“Uma boa história continua com a gente
-mesmo depois da última página.”
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SONHOS -->
-
-<section id="sonhos" class="sonhos">
-
-<div class="sonhos-conteudo">
-
-<span>06 · MY FUTURE ✦</span>
-
-<h2>
-Meus sonhos estão
-apenas <i>começando.</i>
-</h2>
-
-<p>
-Quero continuar estudando, aprender cada vez mais
-e construir um futuro do qual eu possa me orgulhar.
-</p>
-
-<p>
-Um dos meus sonhos profissionais é trabalhar com
-Psicologia. Também quero conhecer novos lugares,
-conquistar minha independência e realizar meus objetivos.
-</p>
-
-<div class="dream">
-DREAM BIG
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<h2>MEU UNIVERSO</h2>
-
-<p>
-Um pequeno espaço sobre quem eu sou,
-o que eu gosto e o que eu sonho para o futuro.
-</p>
-
-<span>© 2026 · BLOG PESSOAL</span>
-
-</footer>
-
+  <header>
+    <nav aria-label="Navegação principal">
+      <div class="logo">MEU UNIVERSO</div>
+
+      <div class="menu">
+        <a href="#sobre">Sobre mim</a>
+        <a href="#escola">Escola</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#filmes">Filmes</a>
+        <a href="#livros">Livros</a>
+        <a href="#sonhos">Sonhos</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="destaque">WELCOME TO MY WORLD ✦</span>
+
+        <h1>
+          Minha vida,<br>
+          meu <i>universo.</i>
+        </h1>
+
+        <p>
+          Um pequeno espaço para conhecer um pouco mais sobre mim,
+          meus gostos, minhas paixões e os sonhos que quero realizar.
+        </p>
+
+        <a class="botao" href="#sobre">
+          CONHECER MAIS →
+        </a>
+      </div>
+
+      <div class="imagem-hero">
+        <img
+          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85"
+          alt="Amigos compartilhando um momento feliz"
+        >
+      </div>
+    </section>
+
+    <div class="faixa">
+      MY STORY • MY DREAMS • MY WORLD
+    </div>
+
+    <section class="sobre" id="sobre">
+      <div class="container">
+        <h2 class="titulo">Sobre mim</h2>
+
+        <div class="sobre-grid">
+          <div class="sobre-imagem">
+            <img
+              src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=85"
+              alt="Pessoa aproveitando um momento criativo"
+            >
+          </div>
+
+          <div class="sobre-texto">
+            <span class="destaque">01 · WHO I AM</span>
+
+            <h2>
+              Prazer,<br>
+              essa sou <i>eu.</i>
+            </h2>
+
+            <p>
+              Oi! Eu sou a Crislei. Sou uma pessoa curiosa,
+              criativa e gosto de descobrir coisas novas.
+            </p>
+
+            <p>
+              Estou vivendo uma fase cheia de descobertas,
+              aprendizados e experiências que estão ajudando
+              a construir quem eu sou.
+            </p>
+
+            <p>
+              Gosto de ler, pintar, assistir filmes e séries,
+              estudar e aproveitar os momentos especiais com
+              as pessoas que fazem parte da minha vida.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="escola" id="escola">
+      <div class="container">
+        <h2 class="titulo claro">Minha vida escolar</h2>
+
+        <p class="intro">
+          A escola representa uma parte importante da minha vida.
+          É onde aprendo, enfrento desafios, descubro novos assuntos
+          e começo a pensar cada vez mais no meu futuro.
+        </p>
+
+        <div class="cards">
+          <article class="card amarelo">
+            <div class="emoji">📚</div>
+            <h3>Aprender</h3>
+            <p>
+              Gosto de aprender coisas novas e descobrir assuntos
+              que podem ser importantes para o meu futuro.
+            </p>
+          </article>
+
+          <article class="card rosa">
+            <div class="emoji">✏️</div>
+            <h3>Desafios</h3>
+            <p>
+              Nem sempre tudo é fácil, mas cada dificuldade
+              é uma oportunidade de aprender e melhorar.
+            </p>
+          </article>
+
+          <article class="card azul">
+            <div class="emoji">⭐</div>
+            <h3>Conquistas</h3>
+            <p>
+              Cada trabalho, prova e atividade concluída
+              representa mais uma experiência.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hobbies" id="hobbies">
+      <div class="container">
+        <h2 class="titulo">Meus hobbies</h2>
+
+        <p class="intro">
+          Nos meus momentos livres, gosto de fazer coisas
+          que despertam minha criatividade e me deixam feliz.
+        </p>
+
+        <div class="hobby-grid">
+          <article class="hobby pintura">
+            <div class="hobby-image">
+              <img
+                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85"
+                alt="Materiais coloridos de pintura"
+              >
+            </div>
+
+            <div class="hobby-content">
+              <span>01</span>
+              <h3>Pintura</h3>
+              <p>
+                Gosto de pintar telas e colocar minha criatividade
+                em cada detalhe.
+              </p>
+            </div>
+          </article>
+
+          <article class="hobby leitura">
+            <div class="hobby-image">
+              <img
+                src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85"
+                alt="Livros organizados em uma estante"
+              >
+            </div>
+
+            <div class="hobby-content">
+              <span>02</span>
+              <h3>Leitura</h3>
+              <p>
+                Os livros me permitem conhecer personagens,
+                lugares e histórias completamente diferentes.
+              </p>
+            </div>
+          </article>
+
+          <article class="hobby cinema">
+            <div class="hobby-image">
+              <img
+                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85"
+                alt="Sala de cinema com tela iluminada"
+              >
+            </div>
+
+            <div class="hobby-content">
+              <span>03</span>
+              <h3>Filmes & séries</h3>
+              <p>
+                Gosto de acompanhar histórias e me envolver
+                com personagens diferentes.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="filmes" id="filmes">
+      <div class="container">
+        <h2 class="titulo claro">Filmes & séries</h2>
+
+        <div class="filme-grid">
+          <div>
+            <span class="destaque amarelo-texto">
+              04 · MOVIES & SERIES
+            </span>
+
+            <h2>
+              Um universo de histórias para <em>assistir.</em>
+            </h2>
+
+            <p>
+              Filmes e séries fazem parte dos meus momentos
+              de diversão. Gosto de histórias que conseguem
+              prender minha atenção e despertar emoções.
+            </p>
+
+            <div class="tags">
+              ROMANCE · DRAMA · AVENTURA
+            </div>
+          </div>
+
+          <div class="filme-imagem">
+            <img
+              src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1000&q=85"
+              alt="Câmera de cinema apontada para uma tela"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="livros-section" id="livros">
+      <div class="container">
+        <h2 class="titulo">Livros</h2>
+
+        <div class="livro-grid">
+          <div class="livro-imagem">
+            <img
+              src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=85"
+              alt="Livro aberto sobre uma mesa"
+            >
+          </div>
+
+          <div class="livro-texto">
+            <span class="destaque">05 · BOOKS</span>
+
+            <h2>
+              Cada livro abre uma nova <i>história.</i>
+            </h2>
+
+            <p>
+              A leitura é um dos hobbies que mais gosto.
+              Os livros conseguem me transportar para outros
+              lugares e me fazer conhecer personagens diferentes.
+            </p>
+
+            <p>
+              Gosto principalmente de histórias que conseguem
+              prender minha atenção e fazer com que eu queira
+              continuar lendo.
+            </p>
+
+            <div class="quote">
+              “Uma boa história continua com a gente
+              mesmo depois da última página.”
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sonhos" id="sonhos">
+      <div class="sonhos-conteudo">
+        <span>06 · MY FUTURE ✦</span>
+
+        <h2>
+          Meus sonhos estão apenas <i>começando.</i>
+        </h2>
+
+        <p>
+          Quero continuar estudando, aprender cada vez mais
+          e construir um futuro do qual eu possa me orgulhar.
+        </p>
+
+        <p>
+          Um dos meus sonhos profissionais é trabalhar com
+          Psicologia. Também quero conhecer novos lugares,
+          conquistar minha independência e realizar meus objetivos.
+        </p>
+
+        <div class="dream">
+          DREAM BIG
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <h2>MEU UNIVERSO</h2>
+
+    <p>
+      Um pequeno espaço sobre quem eu sou,
+      o que eu gosto e o que eu sonho para o futuro.
+    </p>
+
+    <span>© 2026 · BLOG PESSOAL</span>
+  </footer>
 
 </body>
-
 </html>
+
