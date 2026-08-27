@@ -1,1 +1,36 @@
+:root {
+  --azul: #315c72;
+  --azul-claro: #9fd1df;
+  --verde: #719b78;
+  --verde-claro: #cfe4ce;
+  --amarelo: #f2c75c;
+  --amarelo-claro: #fff0b5;
+  --laranja: #e98558;
+  --rosa: #df91a9;
+  --rosa-claro: #f5d5df;
+  --roxo: #8b75ae;
+  --roxo-claro: #d8cbea;
+  --creme: #fff8ed;
+  --escuro: #27242a;
+  --branco: #ffffff;
+}
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--creme);
+  color: var(--escuro);
+  font-family: "Work Sans", Arial, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* e continua com o restante do CSS... */
