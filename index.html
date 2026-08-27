@@ -1,67 +1,146 @@
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Vida | Blog Pessoal</title>
+
+    <title>Meu Universo | Blog Pessoal</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
+    <!-- MENU -->
+
+    <header class="header">
         <nav class="navbar">
-            <a href="#" class="logo">MINHA<span>VIDA</span></a>
+
+            <a href="#inicio" class="logo">
+                CRIS<span>LEI</span>
+            </a>
 
             <ul class="menu">
                 <li><a href="#sobre">Sobre mim</a></li>
                 <li><a href="#escola">Escola</a></li>
                 <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="#filmes">Filmes & Séries</a></li>
+                <li><a href="#filmes">Filmes</a></li>
                 <li><a href="#livros">Livros</a></li>
                 <li><a href="#sonhos">Sonhos</a></li>
             </ul>
+
         </nav>
     </header>
 
+
+    <!-- INÍCIO -->
+
     <main>
 
-        <section class="hero">
-            <div class="hero-text">
-                <p class="small-title">MEU BLOG PESSOAL</p>
+        <section id="inicio" class="hero">
 
-                <h1>Um pouco sobre<br><em>quem eu sou.</em></h1>
+            <div class="hero-decoration decoration-one"></div>
+            <div class="hero-decoration decoration-two"></div>
 
-                <p>
-                    Meus gostos, meus interesses, minhas conquistas
-                    e os sonhos que quero realizar.
-                </p>
+            <div class="hero-content">
 
-                <a href="#sobre" class="button">CONHEÇA MINHA HISTÓRIA</a>
+                <div class="hero-text">
+
+                    <span class="eyebrow">WELCOME TO MY WORLD ✦</span>
+
+                    <h1>
+                        Um pouco de
+                        <span>mim.</span>
+                    </h1>
+
+                    <p>
+                        Este é o meu pequeno espaço para compartilhar
+                        quem eu sou, aquilo que gosto e os sonhos que
+                        quero realizar.
+                    </p>
+
+                    <a href="#sobre" class="hero-button">
+                        CONHEÇA MINHA HISTÓRIA
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <div class="hero-art">
+
+                    <div class="art-circle"></div>
+
+                    <div class="art-card">
+
+                        <span class="art-number">01</span>
+
+                        <div class="art-heart">♡</div>
+
+                        <h2>
+                            my<br>
+                            <i>story</i>
+                        </h2>
+
+                        <span class="art-small">
+                            PERSONAL BLOG
+                        </span>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="hero-card">
-                <div class="circle">♡</div>
-                <p>MY<br>STORY</p>
+            <div class="scroll">
+                SCROLL ↓
             </div>
+
         </section>
 
 
-        <section id="sobre" class="section">
-            <div class="section-title">
-                <span>01</span>
-                <h2>Sobre mim</h2>
+        <!-- SOBRE MIM -->
+
+        <section id="sobre" class="section about">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="number">01 /</span>
+                    <span class="label">QUEM SOU EU</span>
+                </div>
+
+                <span class="line"></span>
+
             </div>
 
-            <div class="content">
-                <div class="text">
-                    <p class="highlight">
+
+            <div class="about-grid">
+
+                <div class="about-title">
+
+                    <p>Prazer,</p>
+
+                    <h2>
+                        essa sou
+                        <i>eu.</i>
+                    </h2>
+
+                    <div class="mini-line"></div>
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <p class="big-text">
                         Oi! Eu sou a Crislei.
                     </p>
 
@@ -73,154 +152,321 @@
 
                     <p>
                         Estou em uma fase de descobrir cada vez mais
-                        quem eu sou, quais são meus objetivos e o que
-                        quero conquistar no futuro.
+                        quem eu sou, meus interesses e aquilo que quero
+                        conquistar no futuro.
                     </p>
 
                     <p>
-                        Este blog é um pequeno espaço para compartilhar
-                        um pouco da minha personalidade, dos meus gostos
-                        e dos meus sonhos.
+                        Criei este espaço para reunir um pouquinho
+                        da minha personalidade, dos meus gostos e
+                        dos meus sonhos.
                     </p>
+
                 </div>
 
-                <div class="quote">
-                    <span>“</span>
-                    Cada pessoa tem uma história única para contar.
-                </div>
             </div>
+
         </section>
 
 
-        <section id="escola" class="section gray">
-            <div class="section-title">
-                <span>02</span>
-                <h2>Minha vida escolar</h2>
-            </div>
+        <!-- ESCOLA -->
 
-            <div class="content">
-                <div class="school-box">
-                    <div class="icon">📚</div>
-                    <h3>APRENDER</h3>
+        <section id="escola" class="school-section">
+
+            <div class="section school">
+
+                <div class="section-header light">
+
+                    <div>
+                        <span class="number">02 /</span>
+                        <span class="label">MINHA JORNADA</span>
+                    </div>
+
+                    <span class="line"></span>
+
+                </div>
+
+
+                <div class="school-intro">
+
+                    <div>
+                        <span class="eyebrow">STUDENT LIFE</span>
+
+                        <h2>
+                            Aprender também
+                            faz parte de <i>quem sou.</i>
+                        </h2>
+                    </div>
+
                     <p>
                         A escola é uma parte importante da minha vida.
-                        Gosto de aprender coisas novas e sempre tento
-                        melhorar quando encontro alguma dificuldade.
+                        Cada matéria, trabalho e desafio traz uma nova
+                        oportunidade de aprender alguma coisa.
                     </p>
+
                 </div>
 
-                <div class="school-box">
-                    <div class="icon">✦</div>
-                    <h3>DESAFIOS</h3>
-                    <p>
-                        Provas, trabalhos e novos conteúdos fazem parte
-                        da minha jornada. Cada desafio é uma oportunidade
-                        de aprender e evoluir.
-                    </p>
+
+                <div class="school-cards">
+
+                    <article class="school-card">
+                        <span class="card-icon">✦</span>
+                        <span class="card-number">01</span>
+
+                        <h3>Aprender</h3>
+
+                        <p>
+                            Gosto de descobrir novos conteúdos e
+                            aprender coisas que podem contribuir
+                            para o meu futuro.
+                        </p>
+                    </article>
+
+
+                    <article class="school-card">
+                        <span class="card-icon">◇</span>
+                        <span class="card-number">02</span>
+
+                        <h3>Desafios</h3>
+
+                        <p>
+                            Nem sempre tudo é fácil, mas cada dificuldade
+                            também pode ser uma oportunidade para melhorar.
+                        </p>
+                    </article>
+
+
+                    <article class="school-card">
+                        <span class="card-icon">✓</span>
+                        <span class="card-number">03</span>
+
+                        <h3>Conquistas</h3>
+
+                        <p>
+                            Cada resultado positivo mostra que dedicação
+                            e esforço podem fazer a diferença.
+                        </p>
+                    </article>
+
                 </div>
 
-                <div class="school-box">
-                    <div class="icon">✓</div>
-                    <h3>CONQUISTAS</h3>
-                    <p>
-                        Cada conquista, mesmo pequena, mostra que todo
-                        esforço pode trazer resultados.
-                    </p>
-                </div>
             </div>
+
         </section>
 
 
-        <section id="hobbies" class="section">
-            <div class="section-title">
-                <span>03</span>
-                <h2>Meus hobbies</h2>
-            </div>
+        <!-- HOBBIES -->
 
-            <div class="cards">
+        <section id="hobbies" class="section hobbies">
 
-                <article class="card">
-                    <div class="card-number">01</div>
-                    <div class="card-icon">🎨</div>
-                    <h3>Pintura</h3>
-                    <p>
-                        Gosto de pintar telas e usar a criatividade
-                        para transformar ideias em arte.
-                    </p>
-                </article>
+            <div class="section-header">
 
-                <article class="card">
-                    <div class="card-number">02</div>
-                    <div class="card-icon">📖</div>
-                    <h3>Leitura</h3>
-                    <p>
-                        Adoro histórias envolventes e personagens
-                        com os quais consigo me identificar.
-                    </p>
-                </article>
-
-                <article class="card">
-                    <div class="card-number">03</div>
-                    <div class="card-icon">🎬</div>
-                    <h3>Filmes e séries</h3>
-                    <p>
-                        Gosto de conhecer histórias diferentes e
-                        acompanhar personagens marcantes.
-                    </p>
-                </article>
-
-            </div>
-        </section>
-
-
-        <section id="filmes" class="section dark">
-            <div class="section-title">
-                <span>04</span>
-                <h2>Filmes & Séries</h2>
-            </div>
-
-            <div class="wide-content">
                 <div>
-                    <p class="category">MEU UNIVERSO</p>
-
-                    <h3>
-                        Histórias que despertam
-                        <em>emoções.</em>
-                    </h3>
+                    <span class="number">03 /</span>
+                    <span class="label">O QUE EU AMO FAZER</span>
                 </div>
 
-                <p>
-                    Gosto de filmes e séries que conseguem prender minha
-                    atenção e fazer com que eu me envolva com os personagens.
-                    Histórias de romance são algumas das que mais me interessam.
-                </p>
+                <span class="line"></span>
+
             </div>
+
+
+            <div class="hobbies-title">
+
+                <span class="eyebrow">MY FAVORITE THINGS</span>
+
+                <h2>
+                    Pequenas coisas que
+                    fazem meu mundo <i>mais divertido.</i>
+                </h2>
+
+            </div>
+
+
+            <div class="hobby-grid">
+
+                <article class="hobby hobby-paint">
+
+                    <div class="hobby-number">01</div>
+
+                    <div class="hobby-symbol">✿</div>
+
+                    <div>
+                        <h3>Pintura</h3>
+
+                        <p>
+                            Gosto de pintar telas e colocar
+                            minha criatividade em prática.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="hobby hobby-books">
+
+                    <div class="hobby-number">02</div>
+
+                    <div class="hobby-symbol">♡</div>
+
+                    <div>
+                        <h3>Leitura</h3>
+
+                        <p>
+                            Histórias envolventes e personagens
+                            que conseguem ficar na memória.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="hobby hobby-movies">
+
+                    <div class="hobby-number">03</div>
+
+                    <div class="hobby-symbol">▶</div>
+
+                    <div>
+                        <h3>Filmes & séries</h3>
+
+                        <p>
+                            Gosto de conhecer histórias diferentes
+                            e acompanhar personagens marcantes.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
         </section>
 
 
-        <section id="livros" class="section">
-            <div class="section-title">
-                <span>05</span>
-                <h2>Livros</h2>
-            </div>
+        <!-- FILMES -->
 
-            <div class="book-feature">
+        <section id="filmes" class="movies-section">
 
-                <div class="book-cover">
-                    <span>♡</span>
-                    <strong>LEITURA</strong>
-                    <small>um mundo dentro de cada página</small>
+            <div class="movies">
+
+                <div class="section-header light">
+
+                    <div>
+                        <span class="number">04 /</span>
+                        <span class="label">TELA & HISTÓRIAS</span>
+                    </div>
+
+                    <span class="line"></span>
+
                 </div>
 
-                <div class="book-text">
-                    <p class="category">UMA DAS MINHAS PAIXÕES</p>
 
-                    <h3>Viajar através das páginas.</h3>
+                <div class="movies-content">
+
+                    <div class="movies-title">
+
+                        <span class="eyebrow">WATCH • FEEL • REMEMBER</span>
+
+                        <h2>
+                            Histórias que
+                            despertam
+                            <i>emoções.</i>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="movies-text">
+
+                        <p>
+                            Filmes e séries fazem parte dos meus
+                            momentos de diversão.
+                        </p>
+
+                        <p>
+                            Gosto de histórias que conseguem prender
+                            minha atenção e fazer com que eu me envolva
+                            com os personagens.
+                        </p>
+
+                        <div class="movie-tag">
+                            ROMANCE · DRAMA · EMOÇÃO
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="film-strip">
+
+                    <div>♡</div>
+                    <div>✦</div>
+                    <div>▶</div>
+                    <div>♡</div>
+                    <div>✦</div>
+                    <div>▶</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LIVROS -->
+
+        <section id="livros" class="section books">
+
+            <div class="section-header">
+
+                <div>
+                    <span class="number">05 /</span>
+                    <span class="label">MINHAS LEITURAS</span>
+                </div>
+
+                <span class="line"></span>
+
+            </div>
+
+
+            <div class="book-layout">
+
+                <div class="book-visual">
+
+                    <div class="book-cover">
+
+                        <span class="book-top">MY</span>
+
+                        <div class="book-heart">♡</div>
+
+                        <h3>
+                            BOOK<br>
+                            <i>world</i>
+                        </h3>
+
+                        <span class="book-bottom">
+                            STORIES I LOVE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="book-info">
+
+                    <span class="eyebrow">A LOVE FOR READING</span>
+
+                    <h2>
+                        Um mundo novo
+                        em cada <i>página.</i>
+                    </h2>
 
                     <p>
-                        A leitura é uma das coisas que mais gosto de fazer.
-                        Livros podem apresentar novos lugares, personagens
-                        e histórias que ficam na nossa memória.
+                        A leitura é uma das coisas que mais gosto
+                        de fazer. Livros conseguem apresentar novos
+                        lugares, personagens e histórias.
                     </p>
 
                     <p>
@@ -229,23 +475,31 @@
                         ao público jovem.
                     </p>
 
-                    <blockquote>
-                        Ler é descobrir novos mundos sem precisar sair do lugar.
-                    </blockquote>
+                    <div class="book-quote">
+                        “Uma boa história continua com a gente
+                        mesmo depois de terminarmos o livro.”
+                    </div>
+
                 </div>
 
             </div>
+
         </section>
 
 
-        <section id="sonhos" class="dreams">
+        <!-- SONHOS -->
+
+        <section id="sonhos" class="dream-section">
+
+            <div class="dream-decoration">✦</div>
+
             <div class="dream-content">
 
-                <p class="small-title">06 · MEU FUTURO</p>
+                <span class="eyebrow">06 / MEU FUTURO</span>
 
                 <h2>
-                    Meus sonhos<br>
-                    <em>estão apenas começando.</em>
+                    Sonhar é o primeiro
+                    passo para <i>realizar.</i>
                 </h2>
 
                 <p>
@@ -255,29 +509,51 @@
                 </p>
 
                 <p>
-                    Um dos meus objetivos profissionais é trabalhar com
-                    Psicologia, uma área que considero interessante por
-                    envolver a compreensão das pessoas e a possibilidade
-                    de ajudá-las.
+                    Um dos meus objetivos profissionais é trabalhar
+                    com Psicologia, uma área que considero interessante
+                    por envolver a compreensão das pessoas e a
+                    possibilidade de ajudá-las.
                 </p>
 
                 <p>
-                    Também quero conhecer novos lugares, construir uma
-                    vida feliz e conquistar meus objetivos através do
-                    meu próprio esforço.
+                    Também quero conhecer novos lugares, construir
+                    uma vida feliz e conquistar meus objetivos
+                    através do meu próprio esforço.
                 </p>
 
-                <div class="dream-word">DREAM</div>
+                <div class="dream-word">
+                    DREAM BIG
+                </div>
+
             </div>
+
         </section>
 
     </main>
 
 
+    <!-- RODAPÉ -->
+
     <footer>
-        <div class="footer-logo">MINHA<span>VIDA</span></div>
-        <p>Um pequeno espaço sobre mim, meus sonhos e minhas paixões.</p>
-        <small>© 2026 · Blog Pessoal</small>
+
+        <div class="footer-top">
+
+            <div class="footer-logo">
+                CRIS<span>LEI</span>
+            </div>
+
+            <p>
+                Um pequeno espaço sobre quem eu sou,
+                aquilo que amo e aquilo que ainda quero viver.
+            </p>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>MY PERSONAL BLOG</span>
+            <span>© 2026</span>
+        </div>
+
     </footer>
 
 </body>
